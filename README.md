@@ -25,7 +25,19 @@ Run this command in the root directory to install dependencies for both client a
 npm install
 ```
 
-### 2. Run the Application
+### 2. Run Tests
+To run tests with code coverage reports:
+```bash
+# Client Coverage
+cd client
+npm run test:coverage
+
+# Server Coverage
+cd server
+npm run test:coverage
+```
+
+### 3. Run the Application
 Start both the backend and frontend concurrently:
 ```bash
 npm run dev
@@ -41,9 +53,9 @@ npm run dev
 ## Project Structure
 
 *   **`client/`**: React frontend with a Dashboard layout and module pages.
-*   **`server/`**: Express API with modular routes (`routes/`) and SQLite database (`insurance.db`).
+*   **`server/`**: Express API with modular routes (`routes/`) and SQLite database (`erp.db`).
 
 ## Database
 
-The application uses a local SQLite database (`server/insurance.db`).
+The application uses a local SQLite database (`server/erp.db`).
 To reset the database or view contents, you can use the `view_db.js` script in the server folder (needs updating) or a SQLite viewer.

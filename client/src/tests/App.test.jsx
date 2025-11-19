@@ -1,26 +1,18 @@
 import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
 import App from '../App';
-import { describe, it, expect, vi } from 'vitest';
-
-// Mock the API calls
-vi.mock('../api', () => ({
-    fetchProducts: vi.fn(() => Promise.resolve([
-        { id: 1, name: 'Test Product', price: 100, features: [] }
-    ])),
-    fetchCart: vi.fn(() => Promise.resolve([])),
-}));
 
 describe('App Component', () => {
-    it('renders the Navbar', async () => {
+    it('redirects to login page by default', () => {
         render(<App />);
-        // Check for Logo text
-        expect(await screen.findByText(/InsureCart/i)).toBeInTheDocument();
-        // Check for Sign In button (since we are not logged in)
-        expect(screen.getByText(/Sign In/i)).toBeInTheDocument();
+        // Should show Sign In form
+        expect(screen.getByRole('heading', { name: /Sign In/i })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: /Sign In/i })).toBeInTheDocument();
     });
 
-    it('renders the Hero section', async () => {
+    it('shows register link', () => {
         render(<App />);
-        expect(await screen.findByText(/Secure Your Future/i)).toBeInTheDocument();
+        expect(screen.getByText(/Don't have an account?/i)).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: /Register/i })).toBeInTheDocument();
     });
 });
