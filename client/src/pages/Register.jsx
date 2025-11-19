@@ -1,4 +1,3 @@
-```javascript
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { register } from '../api';
@@ -27,7 +26,7 @@ export default function Register({ onRegisterSuccess }) {
                         <label style={{ display: 'block', marginBottom: '0.5rem' }}>Full Name</label>
                         <input
                             value={formData.name}
-                            onChange={(e) => setFormData({...formData, name: e.target.value})}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             required
                             style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}
                         />
@@ -37,7 +36,7 @@ export default function Register({ onRegisterSuccess }) {
                         <input
                             type="email"
                             value={formData.email}
-                            onChange={(e) => setFormData({...formData, email: e.target.value})}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             required
                             style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}
                         />
@@ -47,7 +46,7 @@ export default function Register({ onRegisterSuccess }) {
                         <input
                             type="password"
                             value={formData.password}
-                            onChange={(e) => setFormData({...formData, password: e.target.value})}
+                            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                             required
                             style={{ width: '100%', padding: '0.75rem', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}
                         />
@@ -61,4 +60,3 @@ export default function Register({ onRegisterSuccess }) {
         </div>
     );
 }
-```
