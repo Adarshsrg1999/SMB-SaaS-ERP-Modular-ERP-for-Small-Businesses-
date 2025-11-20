@@ -11,11 +11,23 @@ A modular Enterprise Resource Planning (ERP) system designed for small businesse
 *   **Sales Workflow**: Create Quotations, convert to Orders, and generate Invoices.
 
 ## Tech Stack
-
-*   **Frontend**: React, Vite, CSS Modules (Dashboard Layout)
-*   **Backend**: Node.js, Express.js
-*   **Database**: SQLite (Local file-based DB)
-*   **Authentication**: JWT (JSON Web Tokens)
+  ###   **Frontend (/client)**
+  *   Framework: React 19
+  *   Build Tool: Vite
+  *   Routing: React Router DOM
+  *   Testing: Vitest, React Testing Library
+  *   Language: JavaScript (ES Modules)
+  
+  ###   **Backend (/server)**
+  *   Runtime: Node.js
+  *   Framework: Express.js
+  *   Database: SQLite (sqlite3)
+  *   Authentication: JWT (jsonwebtoken) & Bcrypt
+  *   Testing: Jest & Supertest
+  
+  ###   **Root / DevOps**
+  *   Orchestration: concurrently (runs client and server simultaneously)
+  *   Package Manager: npm
 
 ## Quick Start
 
