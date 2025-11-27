@@ -31,3 +31,39 @@ export const register = async (name, email, password) => {
     }
     return response.json();
 };
+
+export const getUsers = async () => {
+    const response = await fetch('/api/users', {
+        headers: getHeaders(),
+    });
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Failed to fetch users');
+    }
+    return response.json();
+};
+
+export const createUser = async (userData) => {
+    const response = await fetch('/api/users', {
+        method: 'POST',
+        headers: getHeaders(),
+        body: JSON.stringify(userData),
+    });
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Failed to create user');
+    }
+    return response.json();
+};
+
+export const deleteUser = async (id) => {
+    const response = await fetch(`/api/users/${id}`, {
+        method: 'DELETE',
+        headers: getHeaders(),
+    });
+    if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Failed to delete user');
+    }
+    return response.json();
+};

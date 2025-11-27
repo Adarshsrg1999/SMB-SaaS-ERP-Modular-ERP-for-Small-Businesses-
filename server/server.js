@@ -16,12 +16,14 @@ const authRoutes = require('./routes/auth');
 const customerRoutes = require('./routes/customers');
 const inventoryRoutes = require('./routes/inventory');
 const salesRoutes = require('./routes/sales');
+const userRoutes = require('./routes/users');
 
 // Mount Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/customers', customerRoutes);
 app.use('/api/inventory', inventoryRoutes);
 app.use('/api/sales', salesRoutes);
+app.use('/api/users', userRoutes);
 
 // Legacy/Redirect Routes
 app.get('/api/products', (req, res) => {

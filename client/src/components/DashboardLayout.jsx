@@ -12,6 +12,10 @@ export default function DashboardLayout({ children, user, onLogout }) {
         { path: '/sales', label: 'Sales & Orders', icon: '💰' },
     ];
 
+    if (user?.role === 'admin') {
+        menuItems.push({ path: '/users', label: 'Users', icon: '👤' });
+    }
+
     return (
         <div style={{ display: 'flex', minHeight: '100vh' }}>
             {/* Sidebar */}
